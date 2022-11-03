@@ -1,9 +1,11 @@
 import React from "react"
 
-import { useSelector } from "react-redux"
-
 import ImageComponent from "./ImageComponent"
 import NavIconBoxComponent from "./NavIconBoxComponent"
+
+import { useRecoilValue } from "recoil"
+
+import { navOpenState } from "../recoil/youtubeState"
 
 const NavLongComponent = () => {
     const navLongHeaderImgList = [
@@ -55,7 +57,7 @@ const NavLongComponent = () => {
         )
     })
 
-    const navOpen = useSelector(state => state.navOpen)
+    const navOpen = useRecoilValue(navOpenState)
 
     return (
         <nav id="navLong" style={{ left: navOpen ? "0px" : "-240px" }}>

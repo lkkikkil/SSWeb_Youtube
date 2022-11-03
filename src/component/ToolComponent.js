@@ -1,11 +1,12 @@
 import React from "react"
 
-import { useDispatch } from "react-redux"
-import { setMainContent, setNavOpen } from "../action/action"
-
 import HeaderComponent from "./HeaderComponent"
 import NavShortComponent from "./NavShortComponent"
 import NavLongComponent from "./NavLongComponent"
+
+import { useRecoilState, useSetRecoilState } from "recoil"
+
+import { navOpenState, mainContentState } from  "../recoil/youtubeState"
 
 let curEventElement
 
@@ -49,25 +50,23 @@ const navIconBoxOutEvent = event => {
 }
 
 const ToolComponent = () => {
-    const dispatch = useDispatch()
+    const [navOpen, setNavOpen] = useRecoilState(navOpenState)
+    const setMainContent = useSetRecoilState(mainContentState)
 
-    const navLongOpenEvent = (event) => {
-        if (event.target.id == "navLongOpenBtnImg") {
-            dispatch(setNavOpen())
+    const navOpenControlEvent = event => {
+        if (event.target.id == "navLongBackground" || event.target.id == "navLongCloseBtnImg" 
+        || event.target.id == "navLongOpenBtnImg" || findTargetLogic(event.target, "navLongIconBox") != null) {
+            const navOpenReverse = !navOpen
+            setNavOpen(navOpenReverse)
         }
-    }
-
-    const navLongCloseEvent = (event) => {
-        if (event.target.id == "navLongBackground" || event.target.id == "navLongCloseBtnImg" || findTargetLogic(event.target, "navLongIconBox") != null) {
-            dispatch(setNavOpen())
-        }
+        iconBoxClickEvent(event)
     }
 
     const iconBoxClickEvent = event => {
         let navIconBox = findTargetLogic(event.target, "navIconBox")
         if (navIconBox != null) {
             let content = navIconBox.id.split("_")[1]
-            dispatch(setMainContent(content))
+            setMainContent(content)
         }
     }
 
@@ -76,10 +75,16 @@ const ToolComponent = () => {
 
         toolContainer.addEventListener("mouseover", navIconBoxOverEvent)
         toolContainer.addEventListener("mouseout", navIconBoxOutEvent)
-        toolContainer.addEventListener("click", navLongOpenEvent)
-        toolContainer.addEventListener("click", navLongCloseEvent)
         toolContainer.addEventListener("click", iconBoxClickEvent)
-    }, [])
+        toolContainer.addEventListener("click", navOpenControlEvent)
+
+        return () => {
+            toolContainer.removeEventListener("mouseover", navIconBoxOverEvent)
+            toolContainer.removeEventListener("mouseout", navIconBoxOutEvent)
+            toolContainer.removeEventListener("click", iconBoxClickEvent)
+            toolContainer.removeEventListener("click", navOpenControlEvent)
+        }
+    })
 
     return (
         <div id="toolContainer">

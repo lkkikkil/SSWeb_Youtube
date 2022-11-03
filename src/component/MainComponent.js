@@ -1,11 +1,13 @@
 import React from "react"
 
-import { useSelector } from "react-redux"
-
 import HomeComponent from "./HomeComponent"
 
+import { useRecoilValue } from "recoil"
+
+import { mainContentState } from "../recoil/youtubeState"
+
 const MainComponent = () => {
-    const mainContent = useSelector(state => state.mainContent)
+    const mainContent = useRecoilValue(mainContentState)
 
     // switch(mainContent) {
     //     case "Home": 

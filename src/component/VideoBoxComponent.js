@@ -20,10 +20,10 @@ const VideoBoxComponent = props => {
     React.useEffect(() => {
         const article = document.getElementsByTagName("article")[videoIndex]
         article.addEventListener("click", videoImgClickEvent)
-        // return () => {
-        //     article.removeEventListener("click", videoImgClickEvent)
-        // }
-    }, [])
+        return () => {
+            article.removeEventListener("click", videoImgClickEvent)
+        }
+    })
 
     return (
         <article className={isSizeUp ? "videoBoxLarge" : "videoBox"}>
