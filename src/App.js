@@ -2,13 +2,15 @@
 
 import React from "react"
 
-import ToolComponent from "./component/ToolComponent"
-import MainComponent from "./component/MainComponent"
+import HeaderComponent from "./component/header/HeaderComponent"
+import NavComponent from "./component/nav/NavComponent"
+import MainComponent from "./component/main/MainComponent"
 
 const App = () => {
     return (
         <React.Fragment>
-            <ToolComponent/>
+            <HeaderComponent/>
+            <NavComponent/>
             <MainComponent/>
         </React.Fragment>
     )

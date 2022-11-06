@@ -1,10 +1,10 @@
 import React from "react"
 
-import HomeComponent from "./HomeComponent"
+import HomeComponent from "./mainContent/home/HomeComponent"
 
 import { useRecoilValue } from "recoil"
 
-import { mainContentState } from "../recoil/youtubeState"
+import { mainContentState } from "../../recoil/youtubeState"
 
 const MainComponent = () => {
     const mainContent = useRecoilValue(mainContentState)

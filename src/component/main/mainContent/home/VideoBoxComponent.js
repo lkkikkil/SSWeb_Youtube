@@ -1,19 +1,19 @@
 import React from "react"
 
-import ImageComponent from "./ImageComponent"
-import PComponent from "./PComponent"
+import ImageComponent from "../../../basic/ImageComponent"
+import PComponent from "../../../basic/PComponent"
 
-import { useIsSizeUp } from "../customHooks/videoCustomHook"
+import { useToggle } from "../../../../customHooks/youtubeCustomHook"
 
 const VideoBoxComponent = props => {
     const { videoImg, videoTime, userImg, title, userName, videoState } = props.object
     const videoIndex = props.index
 
-    const [isSizeUp, changeIsSizeUp] = useIsSizeUp()
+    const [isSizeUp, setIsSizeUp] = useToggle()
 
     const videoImgClickEvent = (event) => {
         if (event.target.className == "videoImg") {
-            changeIsSizeUp()
+            setIsSizeUp()
         }
     }
 

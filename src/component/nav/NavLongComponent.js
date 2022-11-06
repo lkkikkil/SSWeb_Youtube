@@ -1,11 +1,11 @@
 import React from "react"
 
-import ImageComponent from "./ImageComponent"
+import ImageComponent from "../basic/ImageComponent"
 import NavIconBoxComponent from "./NavIconBoxComponent"
 
 import { useRecoilValue } from "recoil"
 
-import { navOpenState } from "../recoil/youtubeState"
+import { navOpenState } from "../../recoil/youtubeState"
 
 const NavLongComponent = () => {
     const navLongHeaderImgList = [
