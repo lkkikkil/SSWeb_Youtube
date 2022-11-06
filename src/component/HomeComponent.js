@@ -18,7 +18,7 @@ const HomeComponent = () => {
         tmpVideoList.push(videoObject)
     }
 
-    const homeContent = videoList.map((element, index) => {
+    const homeContent = videoList && videoList.map((element, index) => { // videoList && => videoList가 있고
         return <VideoBoxComponent key={`videoBox${index}`} object={element} index={index} />
     })
 
