@@ -1,6 +1,7 @@
 const initState = {
     navOpen: false,
-    mainContent: "Home"
+    mainContent: "Home",
+    videoList: []
 }
 
 const reducer = (state = initState, action) => { 
@@ -15,6 +16,11 @@ const reducer = (state = initState, action) => {
             return {
                 ...state,
                 navOpen: !state.navOpen
+            }
+        case "SET_VIDEO_LIST":
+            return {
+                ...state,
+                videoList: action.videoList
             }
         default:
             return state

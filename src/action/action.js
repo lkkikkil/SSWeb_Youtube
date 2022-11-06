@@ -11,4 +11,11 @@ const setNavOpen = () => {
     }
 }
 
-export { setMainContent, setNavOpen } // 여러개를 export 할 때
+const setVideoList = videoList => {
+    return {
+        type: "SET_VIDEO_LIST",
+        videoList: videoList
+    }
+}
+
+export { setMainContent, setNavOpen, setVideoList } // 여러개를 export 할 때
