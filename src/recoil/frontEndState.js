@@ -10,13 +10,3 @@ export const mainContentState = atom({
     key: "mainContent",
     default: "Home"
 })
-
-export const videoListState = atom({
-    key: "videoList",
-    default: []
-})
-
-export const userImgState = atom({
-    key: "userImg",
-    default: "user"
-})

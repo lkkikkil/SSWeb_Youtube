@@ -4,7 +4,8 @@ import ImageComponent from "../basic/ImageComponent"
 
 import { useRecoilState } from "recoil"
 
-import { navOpenState, userImgState } from  "../../recoil/youtubeState"
+import { navOpenState } from  "../../recoil/frontEndState"
+import { userImgState } from  "../../recoil/backEndState"
 
 const HeaderComponent = () => {
     const headerLeftBoxImgList = [

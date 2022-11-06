@@ -4,7 +4,7 @@ import HomeComponent from "./mainContent/home/HomeComponent"
 
 import { useRecoilValue } from "recoil"
 
-import { mainContentState } from "../../recoil/youtubeState"
+import { mainContentState } from "../../recoil/frontEndState"
 
 const MainComponent = () => {
     const mainContent = useRecoilValue(mainContentState)

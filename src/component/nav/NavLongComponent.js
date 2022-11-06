@@ -5,7 +5,7 @@ import NavIconBoxComponent from "./NavIconBoxComponent"
 
 import { useRecoilValue } from "recoil"
 
-import { navOpenState } from "../../recoil/youtubeState"
+import { navOpenState } from "../../recoil/frontEndState"
 
 const NavLongComponent = () => {
     const navLongHeaderImgList = [

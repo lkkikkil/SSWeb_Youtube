@@ -4,7 +4,7 @@ import VideoBoxComponent from "./VideoBoxComponent"
 
 import { useRecoilState } from "recoil"
 
-import { videoListState } from "../../../../recoil/youtubeState"
+import { videoListState } from "../../../../recoil/backEndState"
 
 const HomeComponent = () => {
     const videoObject = { videoImg: "videoImg", videoTime: "19:06:04", userImg: "user", title: "하루의 끝 | 잠 못 자는 당신을 위한 수면 음악", userName: "user", videoState: "조회수 2000만회 • 3시간 전" }

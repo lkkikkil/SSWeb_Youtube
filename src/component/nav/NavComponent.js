@@ -5,7 +5,7 @@ import NavLongComponent from "./NavLongComponent"
 
 import { useRecoilState, useSetRecoilState } from "recoil"
 
-import { navOpenState, mainContentState } from  "../../recoil/youtubeState"
+import { navOpenState, mainContentState } from  "../../recoil/frontEndState"
 
 const findTargetLogic = (element, targetClassName) => {
     while (element) {
