@@ -24,13 +24,13 @@ const NavIconBoxComponent = props => {
 
     const navIconOverEvent = () => {
         if(isOver == false) {
-            setIsOver(!isOver)
+            setIsOver()
         }
     }
 
     const navIconOutEvent = event => {
         if(checkParentLogic(event,navIconBoxId) == false) {
-            setIsOver(!isOver)
+            setIsOver()
         }
     }
 
