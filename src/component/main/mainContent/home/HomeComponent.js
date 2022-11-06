@@ -16,7 +16,7 @@ const HomeComponent = () => {
 
     const [videoList, setVideoList] = useRecoilState(videoListState)
 
-    const homeContent = videoList.map((element, index) => {
+    const homeContent = videoList && videoList.map((element, index) => {
         return <VideoBoxComponent key={`videoBox${index}`} object={element} index={index} />
     })
 
